@@ -1,6 +1,4 @@
 # Docker
-Here’s a complete explanation 👇
-
 ---
 
 ### **🔹 What is Docker**
