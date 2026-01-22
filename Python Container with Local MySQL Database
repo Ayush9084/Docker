@@ -1,0 +1,46 @@
+📦 Python Container with Local MySQL Database (Full Documentation)
+
+This setup runs:
+
+A Python application inside Docker
+
+Connects to MySQL running on your local machine OR in another container
+
+Uses pymysql
+
+Persists data safely
+
+📁 Project Structure
+
+project/
+│
+├── app/
+│   ├── sql_demo.py
+│   ├── requirements.txt
+│
+├── Dockerfile
+├── docker-compose.yml
+└── README.md
+
+📄 requirements.txt
+pymysql
+
+pymysql
+
+🐳 Dockerfile (Python App Container)
+
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY app/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY app/sql_demo.py .
+
+CMD ["python", "sql_demo.py"]
+
+▶ Run the Application
+
+docker build -t python:05 .
+docker run -it --rm python:05
